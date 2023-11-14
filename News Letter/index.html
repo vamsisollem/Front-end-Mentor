@@ -6,6 +6,7 @@
   <link rel="fontstyle" src="./assets/fonts/Roboto-Bold.ttf">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./index.css">
+  
   <title>Frontend Mentor | Newsletter sign-up form with success message</title>
 
   <style>
@@ -13,9 +14,9 @@
   </style>
 </head>
 <body>
-
+  
   <!-- Sign-up form start -->
-  <div class="container">
+  <div class="container" id="container">
     <div class="info-side">
       <div class="heading">Stay updated!</div>
       <div><p>Join 60,000+ product managers receiving monthly updates on:</p></div>
@@ -35,17 +36,24 @@
           </div>    
       </div>
       <div>
-        <label>Email address</label><br>
-        <input type="email" placeholder="email@company.com" required>
+        <label>Email address</label><div class="error" id="error">valid email required</div><br>
+        <input class="input-before" type="email" id="email" placeholder="email@company.com" required>
       </div>
       <div>
-        <button>Subscribe to monthly newsletter</button>
+        <button id="btn">Subscribe to monthly newsletter</button>
       </div>
     </div>
     <div class="image-side">
       <img src="./assets/images/illustration-sign-up-desktop.svg" alt="newsletter">
     </div>
   </div>
+  <div class="success" id="success">
+    <div class="custom-checkbox success-check success-tick"></div>
+    <h1>Thanks for subscribing!</h1>
+    <p>A confirmation email has been sent to some gmail.com. Please open it and click the button inside to confirm your subscription.</p>
+    <button id="dismiss">Dismiss message</button>
+  </div>
   <div class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"">Frontend Mentor.</a>coded by Vamsi Sollem</div>
+  <script src="./index.js"></script>
 </body>
 </html>
