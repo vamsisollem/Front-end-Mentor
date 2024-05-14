@@ -1,0 +1,227 @@
+body{
+    padding:0;
+    margin:0;
+}
+header{
+    left:0;
+    right:0;
+    margin:auto;
+    width:70%;
+    display:flex;
+    justify-content: flex-start;
+    flex-basis: auto;
+    flex-wrap: wrap;
+    border-bottom:1px solid rgb(0,0,0,0.2);
+}
+h1{
+font-family: "Kumbh Sans", sans-serif;
+font-weight: 700;
+}
+nav > ul{
+    list-style: none;
+    display:flex;
+    gap:2rem;
+    line-height: 3.5rem;
+}
+nav > ul > li{
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: 400;
+}
+.nav-end{
+    display: flex;
+    justify-content: flex-end;
+    gap:2rem;
+    width:40%;
+    align-items: center;
+}
+main{
+    margin: auto;
+    width: 70%;
+}
+.cart-container{
+    width:20%;
+    height:auto;
+    background-color: white;
+    box-shadow: 5px 5px 10px #eaecef;
+    border-radius: 5px;
+    position:absolute;
+    right:15%;
+    display: none;
+}
+.visible{
+    display: block;
+}
+#cart{
+    float: right;
+    cursor: pointer;
+}
+.cart-info{
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    padding:1.2rem;
+    border-bottom: 1px solid rgb(0,0,0,0.2);
+}
+.cart-image{
+    width:3rem;
+    height:3rem;
+    border-radius: 5px;
+}
+.cart-details{
+    display: flex;
+    gap:1.5rem;
+    padding:1rem;
+    width:auto;
+    justify-content: space-around;
+}
+#delete{
+    width:1rem;
+    height:1rem;
+    cursor: pointer;
+}
+button{
+    background-color: hsl(26, 100%, 55%);
+    color:white;
+    height:2rem;
+    width:10rem;
+    border-radius: 10px;
+    text-align: center;
+    border:none;
+    left:0;
+    right:0;
+    margin: auto;
+    margin-bottom: 1.2rem;
+    cursor:pointer;
+}
+.price-format{
+    display: flex;
+   gap:1rem;
+   padding:0;
+   list-style-type: none;
+}
+.cart-section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.products{
+    width:100%;
+    height:auto;
+    display: flex;
+    gap:2rem;
+    justify-content: center;
+}
+.product{
+    width:50%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    padding:7rem;
+}
+.product-pic{
+    width:400px;
+    height:400px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+}
+.product-pic > img{
+    display: block;
+    width:100%;
+    height:auto;
+}
+.thumbnails{
+    display: flex;
+    width:400px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.thumbnails > img{
+    width:5rem;
+    height:5rem;
+    gap:1rem;
+    border-radius: 10px;
+}
+.product__info{
+    width:100%;
+    height:auto;
+    padding: 6rem 0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.orange{
+    color: hsl(26, 100%, 55%);
+    font-family: "Kumbh Sans", sans-serif;
+    font-size: 14px;
+}
+h2{
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: bold;
+    font-size: 2.1rem;
+}
+.justify{
+    text-align: justify;
+}
+.prices{
+    display: flex;
+    justify-content: space-between;
+    gap:1.5rem;
+    align-items: center;
+}
+.price{
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.discount{
+    background-color: hsl(25, 100%, 94%);
+    color: hsl(26, 100%, 55%);
+    margin-bottom: 0;
+}
+.msrp{
+    justify-content: flex-start;
+    text-decoration: line-through;
+}
+.details{
+    display: flex;
+    gap: 1rem;
+    width:100%;
+}
+.quantity{
+    display: flex;
+    width: fit-content;
+    padding: .75rem 1.5rem;
+    border: 3px solid #eaecef;
+    background:hsl(223, 64%, 98%);
+    gap:2rem;
+    /* align-items: center; */
+    line-height: 0.7rem;
+    height:1rem;
+    border-radius: 10px;
+}
+.minus, .plus{
+    color:hsl(26, 100%, 55%);
+    font-weight: bold;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.button{
+    background-color: hsl(26, 100%, 55%);
+    color:white;
+    height:3rem;
+    width:18rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+    align-items: center;
+    cursor: pointer;
+}
+.button img{
+    width:1.5rem;
+    height:1.5rem;
+}
