@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Where in the world?</h1>
+        <div class="dark" id="mode" onclick="darkTheme()"><ion-icon name="moon-outline"></ion-icon>Dark mode</div>
+    </header>
+    <main>
+        <div class="searchAndfilter">
+            <div class="searchBar">
+                <ion-icon name="search-outline" size="large"></ion-icon>
+                <input type="text" placeholder="Search for a country" id="country" onchange="getspecifiedCountry(this.value)">
+            </div>
+            <select class="filter" onchange="getspecificRegion(this.value)">
+                <option value="All">Filter by Region</option>
+                <option value="Africa">Africa</option>
+                <option value="America">America</option>
+                <option value="Asia">Asia</option>
+                <option value="Europe">Europe</option>
+                <option value="Oceania">Oceania</option>
+            </select>
+        </div>
+       
+        <% apiData.forEach(country => { %>
+            <div class="country">
+                <img src="<%= country.flags.png %>" alt="<%= country.name %> flag" class="flag">
+                <div class="countryInfo">
+                    <h2><%= country.name %></h2>
+                    <p>Population: <%= country.population %></p>
+                    <p id="region">Region: <%= country.region %></p>
+                    <p>Capital: <%= country.capital %></p>
+                </div>
+            </div>
+        <% }) %>
+    </main>
+    <script>
+        function getspecifiedCountry(value) {
+            var countries = document.querySelectorAll('.country');
+            var searchValue = value.toLowerCase();
+            countries.forEach(country => {
+                var countryName = country.querySelector('h2').textContent.toLowerCase();
+                if (countryName.includes(searchValue)) {
+                    country.style.display = 'block';
+                } 
+                else if(countryName === ''){
+                    country.style.display = 'block';
+                }
+                else {
+                    country.style.display = 'none';
+                }
+            });
+        }
+        function getspecificRegion(value) {
+            var countries = document.querySelectorAll('.country');
+            var searchValue = value.toLowerCase();
+            countries.forEach(country => {
+                var countryRegion = country.querySelector('#region').textContent.toLowerCase();
+                if (countryRegion.includes(searchValue)) {
+                    country.style.display = 'block';
+                    }
+                else if(searchValue.includes('all')){
+                    country.style.display = 'block';
+                }
+                else {
+                    country.style.display = 'none';
+                    }
+                });
+                }
+        function darkTheme(){
+            if(document.getElementById('mode').className === 'dark'){
+                let header = document.querySelector('header');
+                header.style.background = 'hsl(209, 23%, 22%)';
+                let h1 = document.querySelector('h1');
+                h1.style.color = 'white';
+                let mode = document.querySelector('#mode');
+                mode.style.color = 'white';
+                mode.classList.add('light');
+                mode.classList.remove('dark');
+                let moon = document.querySelector('ion-icon');
+                moon.name = 'moon';
+                let main = document.querySelector('main');
+                main.style.background = 'hsl(207, 26%, 17%)';
+                let searchBar = document.querySelector('.searchBar');
+                searchBar.style.background = 'hsl(209, 23%, 22%)';
+                searchBar.style.boxShadow = 'none';
+                searchBar.style.color = 'white';
+                let inputElement = document.querySelector('#country');
+                inputElement.classList.add('white');
+                inputElement.classList.remove('black');
+                inputElement.style.background = 'hsl(209, 23%, 22%)';
+                let filter = document.querySelector('.filter');
+                filter.style.background = 'hsl(209, 23%, 22%)';
+                filter.style.color = 'white';
+                var countries = document.querySelectorAll('.country');
+                countries.forEach(country =>{
+                    country.style.background = 'hsl(209, 23%, 22%)';
+                    country.style.color = 'white';
+                    country.style.boxShadow = '1px 1px 5px hsl(209, 23%, 22%)'
+                });
+            }
+            else if(document.getElementById('mode').className === 'light'){
+                let header = document.querySelector('header');
+                header.style.background = 'white';
+                let h1 = document.querySelector('h1');
+                h1.style.color = 'hsl(200, 15%, 8%)';
+                let mode = document.querySelector('#mode');
+                mode.style.color = 'hsl(200, 15%, 8%)';
+                mode.classList.add('dark');
+                mode.classList.remove('light');
+                let moon = document.querySelector('ion-icon');
+                moon.name = 'moon-outline';
+                let main = document.querySelector('main');
+                main.style.background = 'hsl(0, 0%, 98%)';
+                let searchBar = document.querySelector('.searchBar');
+                searchBar.style.background = 'white';
+                searchBar.style.boxShadow = '5px 5px 10px gray';
+                searchBar.style.color = 'hsl(200, 15%, 8%)';
+                let inputElement = document.querySelector('#country');
+                inputElement.classList.add('black');
+                inputElement.classList.remove('white');
+                inputElement.style.background = 'white';
+                let filter = document.querySelector('.filter');
+                filter.style.background = 'white';
+                filter.style.color = 'hsl(200, 15%, 8%)';
+                var countries = document.querySelectorAll('.country');
+                countries.forEach(country =>{
+                    country.style.background = 'white';
+                    country.style.color = 'hsl(200, 15%, 8%)';
+                });
+            }
+            
+        }	
+    </script>
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
