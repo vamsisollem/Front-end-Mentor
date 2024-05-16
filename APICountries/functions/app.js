@@ -10,4 +10,6 @@ app.get('https://664645a8ab96fe234b896352--darling-marigold-9cefdc.netlify.app/'
     res.render('data', { apiData});
     console.log(apiData);
 });
-app.listen(3000);
+// app.listen(3000);
+app.use('/functions/app', router);
+module.exports.handler = serverless(app);
