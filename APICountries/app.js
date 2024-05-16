@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 app.set('view engine','ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 const apiData = JSON.parse(fs.readFileSync('data.json','utf-8'));
-app.get('/', (req,res)=>{
+app.get('https://664645a8ab96fe234b896352--darling-marigold-9cefdc.netlify.app/', (req,res)=>{
     res.render('data', { apiData});
     console.log(apiData);
 });
