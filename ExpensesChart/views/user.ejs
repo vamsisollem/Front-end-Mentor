@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="expenses-head">
+        <h1>Enter the Expenses</h1>
+        <div class="circles">
+            <div class="black-circle"></div>
+            <div class="white-circle"></div>
+        </div>
+    </div>
+    <form class="expenses-body" id="expenses-form" method="post" action="/expenditure">
+        <div class="expenses-input">
+            <label for="monday">Monday</label>
+            <input type="number" id="mon" name="monday" required>
+        </div>
+        <div class="expenses-input">
+            <label for="tuesday">Tuesday</label>
+            <input type="number" id="tue" name="tuesday" required>
+        </div>
+        <div class="expenses-input">
+            <label for="wednesday">Wednesday</label>
+            <input type="number" id="wed" name="wednesday" required>
+        </div>
+        <div class="expenses-input">
+            <label for="thursday">Thursday</label>
+            <input type="number" id="thu" name="thursday" required>
+        </div>
+        <div class="expenses-input">
+            <label for="friday">Friday</label>
+            <input type="number" id="fri" name="friday" required>
+        </div>
+        <div class="expenses-input">
+            <label for="saturday">Saturday</label>
+            <input type="number" id="sat" name="saturday" required>
+        </div>
+        <div class="expenses-input">
+            <label for="sunday">Sunday</label>
+            <input type="number" id="sun" name="sunday" required>
+        </div>
+        <input type="submit" value="submit">
+    </form>
+    <script>
+
+    </script>
+</body>
+</html>

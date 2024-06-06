@@ -4,8 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Chart</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Hello!</h1>
+    <div class="balance">
+        <div class="balance-details">
+            <h3 class="dm-sans">My balance</h3>
+            <span class="dm-sans font-size">$900</span>
+        </div>
+        <div class="circles">
+            <div class="black-circle"></div>
+            <div class="white-circle"></div>
+        </div>
+    </div>
+    <div class="spending-details">
+        <h2 class="dm-sans">Spending - Last 7 days</h2>
+        <div class="bar-graph" id="bar-graph">
+            <div class="bar-format">
+                <div class="label">Mon</div>
+                <div class="bar" id="mon"></div>
+                <div id="mon-expenditure" class="expenditure"></div>
+            </div>
+            
+            <div class="bar-format">
+                <div class="label">Tue</div>
+                <div class="bar" id="tue"></div>
+                <div id="tue-expenditure" class="expenditure"></div>
+            </div>
+            <div class="bar-format">
+                <div class="label" >Wed</div>
+                <div class="bar" id="wed"></div>
+                <div id="wed-expenditure" class="expenditure"></div>
+            </div>
+            <div class="bar-format">
+                <div class="label">Thu</div>
+                <div class="bar" id="thu"></div>
+                <div id="thu-expenditure" class="expenditure"></div>
+            </div>
+            <div class="bar-format">
+                <div class="label">Fri</div>
+                <div class="bar" id="fri"></div>
+                <div id="fri-expenditure" class="expenditure"></div>
+            </div>
+            <div class="bar-format">
+                <div class="label">Sat</div>
+                <div class="bar" id="sat"></div>
+                <div id="sat-expenditure" class="expenditure"></div>
+            </div>
+            <div class="bar-format">
+                <div class="label">Sun</div>
+                <div class="bar" id="sun"></div>
+                <div id="sun-expenditure" class="expenditure"></div>
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="total">
+            <div class="total-details">
+                <p class="total-text dm-sans">Total this month</p>
+                <p class="total-number dm-sans" id="total">$0</p>
+            </div>
+            <div class="total-additional">
+                <span id="percent">+2.4</span>
+                <p class="month dm-sans">from last month</p>
+            </div>
+        </div>
+    </div>
+   <script>
+    const jsonData = <%- JSON.stringify(jsonData) %>;
+    const barDiv = document.querySelector('.bar-graph');
+    let sum = 0;
+    const totalValue = document.getElementById('total');
+    jsonData.forEach(data => {
+        sum+= parseFloat(data.amount);
+        console.log(data.amount);
+        const day = barDiv.querySelector(`#${data.day}`);
+        if (day) {
+            const height = Math.round((data.amount * 3) / 2);
+            day.style.height = `${height}px`;
+            day.addEventListener('mouseover', (event)=>{
+                event.target.style.background = 'hsl(186, 34%, 60%)';
+                document.getElementById(`${data.day}-expenditure`).textContent = data.amount;
+            });
+            day.addEventListener('mouseout', (event)=>{
+                event.target.style.background = 'hsl(10, 79%, 65%)';
+                document.getElementById(`${data.day}-expenditure`).textContent = '';
+            });
+        }
+    });
+    totalValue.textContent = `$ ${sum}`;
+            
+   </script>
 </body>
 </html>
