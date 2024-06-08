@@ -81,10 +81,9 @@ h2{
     background:var(--Soft-red);
     border-radius: 5px;
     cursor: pointer;
+    height: 0;
+    transition: height 1s ease-in-out;
 }
-/* #mon, #tue, #wed, #thu, #fri, #sat, #sun{
-    height:150px;
-} */
 .bar-graph{
     display: flex;
     justify-content: space-between;
