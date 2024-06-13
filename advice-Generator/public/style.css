@@ -1,0 +1,68 @@
+:root{
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+    --Grayish-Blue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+    }
+    body{
+        background:var(--Dark-Grayish-Blue);
+        margin:0;
+        padding:0;
+        font-family: manrope;
+    }
+    .container{
+        width:350px;
+        height:auto;
+        background:var(--Grayish-Blue);
+        position:absolute;
+        top: 50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        border-radius:15px;
+    }
+    h1{
+        color: var(--Neon-Green);
+        text-align: center;
+        font-size: small;
+        padding:20px;
+        margin:0;
+    }
+    p{
+        text-align: center;
+        color:var(--Light-Cyan);
+        font: large/bold;
+        padding:20px;
+        margin:0;
+    }
+    .line-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding:20px;
+      }
+      
+      .left-line, .right-line {
+        flex-grow: 1;
+        border: none;
+        border-top: 1px solid var(--Light-Cyan);
+      }
+     .dice{
+        background:var(--Neon-Green);
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        position: fixed;
+        bottom:-25px;
+        left:0;
+        right:0;
+        margin:auto;
+        cursor: pointer;
+     }
+     .dice > img{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+     }
+      
