@@ -9,6 +9,7 @@ body{
     width:100vw;
     height:100vh;
     overflow-x:hidden;
+    margin:0;
 }
 ul{
     display: flex;
@@ -62,12 +63,12 @@ nav{
 }
 .decor{
     background:var(--Soft-Blue);
-    width:100%;
+    width:90%;
     height:70%;
-    border-radius: 300px;
+    border-radius:0 0 0 200px;
     position:absolute;
     bottom:0;
-    right:-250px;
+    right:-65px;
     z-index: -1;
 }
 .hero-image{
@@ -136,17 +137,21 @@ nav{
 }
 .tabs{
     border-bottom:1px solid var(--Grayish-Blue);
+    
 }
 .tabs ul{
     margin:0;
+    padding: 0;
 }
 .tabs ul li{
-    padding:10px 40px;
+    padding:10px 40px; 
+}
+.border-red{
     border-bottom:2px solid var(--Soft-Red);
 }
 .simpleBookmarking{
     padding:60px 30px;
-    display: none;
+    display: flex;
     justify-content: space-around;
 }
 .simpleBookmark-image{
@@ -161,12 +166,12 @@ nav{
 }
 .decor2{
     background:var(--Soft-Blue);
-    width:120%;
+    width:100%;
     height:70%;
-    border-radius: 300px;
+    border-radius: 0 0 200px 0;
     position:absolute;
     bottom:0;
-    left:-200px;
+    left:-60px;
     z-index: -1;
 }
 .simpleBookmark-text{
@@ -193,7 +198,7 @@ nav{
 
 .speedySearching{
     padding:60px 30px;
-    display: none;
+    display: flex;
     justify-content: space-around;
 }
 .speedySearch-image{
@@ -208,12 +213,12 @@ nav{
 }
 .decor3{
     background:var(--Soft-Blue);
-    width:120%;
+    width:100%;
     height:70%;
-    border-radius: 300px;
+    border-radius: 0 0 300px 0;
     position:absolute;
     bottom:0;
-    left:-200px;
+    left:-60px;
     z-index: -1;
 }
 .speedySearch-text{
@@ -257,12 +262,12 @@ nav{
 }
 .decor4{
     background:var(--Soft-Blue);
-    width:120%;
+    width:100%;
     height:70%;
-    border-radius: 300px;
+    border-radius: 0 0 200px 0;
     position:absolute;
     bottom:30px;
-    left:-200px;
+    left:-60px;
     z-index: -1;
 }
 .easyShare-text{
@@ -286,4 +291,207 @@ nav{
     border-radius:10px;
 }
 
+.extensions{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.extension-heading{
+    text-align: center;
+    font-size: 35px;
+    margin:0;
+}
+.extension-para{
+    width:500px;
+    line-height:1.5;
+    font-size: medium;
+    color: var(--Grayish-Blue);
+    text-align:center;
+}
 
+
+.container {
+    display: flex;
+    align-items: center;
+    gap:30px;
+    margin-bottom: 100px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    margin-top: 20px;
+}
+
+.card img {
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.card p {
+    color: grey;
+    font-size: 14px;
+    margin: 10px 0 30px 0;
+}
+
+.card button {
+    background-color: var(--Soft-Blue);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #3a6cd1;
+}
+
+.chrome {
+    margin-top: 0;
+}
+
+.firefox {
+    margin-top: 20px;
+}
+
+.opera {
+    margin-top: 40px;
+}
+.card hr{
+    border: none;
+    border-bottom: 5px dotted #ccc;
+    margin: 20px 0px;
+}
+.firefox-top{
+    margin-top: 100px;
+}
+.opera-top{
+    margin-top: 200px;
+}
+
+
+.faq{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+.faq-heading{
+    text-align: center;
+    font-size: 35px;
+    margin:0;
+}
+.faq-para{
+    width:500px;
+    line-height:1.5;
+    font-size: medium;
+    color: var(--Grayish-Blue);
+    text-align:center;
+}
+.faq hr{
+    width:50%;
+    border: 1px solid #ccc;
+    margin: 20px 0px;
+}
+
+.question{
+    display:flex;
+    gap:400px;
+    border-bottom:1px solid #ccc;
+}
+.question p{
+    width:60%;
+}
+.question button{
+    border:none;
+    background:white;
+}
+.accordian{
+    margin-bottom: 60px;
+}
+
+.accordian-button{
+    padding:10px 20px;
+    border: none;
+    background-color: var(--Soft-Blue);
+    color: white;
+    border-radius: 10px;
+}
+
+
+.subscribe{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background:var(--Soft-Blue);
+    color:white;
+}
+.subscribe-heading{
+    text-align: center;
+    font-size: 30px;
+    margin:0;
+    width:500px;
+}
+.subscribe-para{
+    line-height:1.5;
+    font-size: small;
+    text-align:center;
+}
+.emailSubscribe{
+    padding:20px;
+    display: flex;
+    gap:20px;
+}
+.email{
+    width:250px;
+    height:20px;
+    padding:10px;
+    border:none;
+    border-radius: 10px;
+    outline: none;
+}
+.submitButton{
+    background: var(--Soft-Red);
+    padding:10px 20px;
+    color:white;
+    border:none;
+    border-radius: 10px;
+}
+
+
+footer{
+    background:var(--Very-Dark-Blue);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    padding:5px 20px;
+}
+footer img{
+    width:11rem;
+    height:1.8rem;
+}
+
+.icon{
+    width:auto;
+    height:auto;
+    margin:15px;
+}
+.icons{
+   padding:10px;
+}
