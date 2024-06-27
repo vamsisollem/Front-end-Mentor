@@ -1,0 +1,25 @@
+.user-container{
+    width:100vw;
+    height:auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.user-container li{
+    list-style: none;
+}
+#delete{
+    background-color: rgb(164, 67, 67);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width:150px;
+    margin:auto;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+h1{
+    text-align: center;
+}
