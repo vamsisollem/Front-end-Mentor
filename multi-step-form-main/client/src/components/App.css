@@ -1,0 +1,224 @@
+:root{
+--Marine-blue: hsl(213, 96%, 18%);
+--Purplish-blue: hsl(243, 100%, 62%);
+--Pastel-blue: hsl(228, 100%, 84%);
+--Light-blue: hsl(206, 94%, 87%);
+--Strawberry-red: hsl(354, 84%, 57%);
+
+--Cool-gray: hsl(231, 11%, 63%);
+--Light-gray: hsl(229, 24%, 87%);
+--Magnolia: hsl(217, 100%, 97%);
+--Alabaster: hsl(231, 100%, 99%);
+--White: hsl(0, 0%, 100%);
+}
+body{
+  background-color: var(--Light-gray);
+  margin:0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container{
+    width:850px;
+    height:600px;
+    background: var(--White);
+    border-radius:10px;
+    display: flex;
+    gap:20px;
+}
+.tab{
+    background: url('../assets/images/bg-sidebar-desktop.svg');
+    height:560px;
+    width: 270px;
+    border-radius:10px;
+    margin:auto 15px;
+}
+.flex-row{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    margin-left: 20px;
+    padding: 20px;
+}
+.number{
+    /* background: var(--Light-blue); */
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+    text-align: center;
+    margin:5px;
+    line-height: 1.5rem;
+    color: var(--White);
+    border:1px solid var(--White);
+}
+.number-active{
+    background: var(--Light-blue);
+}
+.flex-row p,h4{
+    margin:0;
+}
+.flex-row p{
+    color:var(--Cool-gray);
+    margin-bottom:5px;
+    font-size: 12px;
+}
+.flex-row h4{
+    color: var(--White);
+}
+.content{
+    padding:20px 40px;
+    display: flex;
+    flex-direction: column;
+}
+.content p{
+    margin:5px;
+    font-size: 14px;
+    color: var(--Cool-gray);
+}
+.content h1{
+    color:var(--Marine-blue);
+    margin-bottom: 0;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin:40px 10px;
+    gap:5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"]{
+    padding:15px;
+    outline:none;
+    border:1px solid var(--Light-gray);
+    border-radius: 5px;
+    width:350px;
+}
+label{
+    color:var(--Marine-blue);
+    margin:5px;
+}
+.next{
+    background-color: var(--Marine-blue);
+    color:var(--White);
+    padding:10px 15px;
+    outline:none;
+    border: none;
+    border-radius: 5px;
+    float: right;
+    cursor: pointer;
+    width:150px;
+}
+.option-container img{
+    width:50px;
+    height:50px;
+    object-fit: contain;
+    display: block;
+}
+.option-container{
+    width:100px;
+    height:130px;
+    border-radius:5px;
+    border:1px solid var(--Pastel-blue);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:10px;
+}
+.option-highlight{
+    background-color:var(--Light-blue);
+}
+.option-container:hover{
+    border:1px solid var(--Pastel-blue);
+    box-shadow: 2px 2px 5px var(--Marine-blue);
+}
+h5{
+    margin:0;
+    color: var(--Marine-blue);
+    font-size: 18px;
+}
+.options{
+    display: flex;
+    gap:15px;
+    margin:40px 10px;
+}
+.plan-container{
+    margin-bottom: 80px;
+}
+.checkbox{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 30px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: var(--Marine-blue);
+    position: relative;
+    cursor: pointer;
+    line-height: 1.5rem;
+}
+.checkbox:after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+  }
+  .checkbox:checked:after {
+    transform: translateX(15px);
+  }
+  .toggle-container{
+    background: var(--Light-gray);
+    width:400px;
+    height:auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding:10px;
+    align-items: center;
+    margin:10px;
+  }
+
+  .content .next{
+    align-self: flex-end;
+  }
+  .back{
+    border:none;
+    outline:none;
+    color: var(--Cool-gray);
+    background: none;
+  }
+  .content .back{
+    align-self: flex-start;
+  }
+  .service-container{
+    border:1px solid var(--Pastel-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    width:350px;
+    padding:15px;
+  }
+  .innerService-container{
+    display: flex;
+    justify-content: space-between;
+    padding:5px;
+    gap:10px;
+  }
+  .innerService-container input[type="checkbox"]{
+    border: 1px solid var(--Light-gray) !important;
+  }
+  .services{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    padding:20px;
+    margin-bottom: 80px;
+  }
