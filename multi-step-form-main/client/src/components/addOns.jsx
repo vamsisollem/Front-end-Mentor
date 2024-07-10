@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function addOns({tabChange}) {
+function addOns({tabChange, onAddOnSubmit}) {
     function handleNext(){
         tabChange(3);
+        onAddOnSubmit(selectedAddOns);
        }
        function handleBack(){
         tabChange(1);
+       }
+       const [selectedAddOns, setSelectedAddOns] = useState([]);
+       const addAddOns = (addOnName, price)=>{
+            const selectedAddon = selectedAddOns.includes(addOnName);
+            if(selectedAddon){
+                setSelectedAddOns(selectedAddOns.filter(addOn => addOn !== addOnName));
+            }
+            else{
+                setSelectedAddOns([...selectedAddOns, {name: addOnName, price: price}]);
+            }
        }
   return (
     <div className='container'>
@@ -45,7 +56,7 @@ function addOns({tabChange}) {
     <div className='services'>
     <div className='service-container'>
         <div className='innerService-container'>
-            <input type="checkbox"></input>
+            <input type="checkbox" onChange={()=>addAddOns('Online Services', '+$1/mon')}></input>
             <div>
                 <h5>Online Service</h5>
                 <p>access to multiplayer games</p>
@@ -55,7 +66,7 @@ function addOns({tabChange}) {
     </div>
     <div className='service-container'>
         <div className='innerService-container'>
-            <input type="checkbox"></input>
+            <input type="checkbox" onChange={()=>addAddOns('Larger Storage', '+$2/mon')}></input>
             <div>
                 <h5>Larger storage</h5>
                 <p>Extra 1TB of cloud save</p>
@@ -65,7 +76,7 @@ function addOns({tabChange}) {
     </div>
     <div className='service-container'>
         <div className='innerService-container'>
-            <input type="checkbox"></input>
+            <input type="checkbox" onChange={()=>addAddOns('Customizable Profile', '+$2/mon')}></input>
             <div>
                 <h5>Customizable Profile</h5>
                 <p>custom theme on your profile</p>

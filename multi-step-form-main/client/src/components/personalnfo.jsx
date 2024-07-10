@@ -1,14 +1,23 @@
 import React from 'react'
 import {useState} from 'react';
-
-function Personalnfo({tabChange}) {
+function Personalnfo({tabChange, onDataSubmit}) {
     function handleNext(){
+        onDataSubmit(formData);
         tabChange(1);
     }
-    const [active, setActive] = useState(0);
-    function activeTab(){
-        
-    }
+    const [formData, setformData] = useState({
+        Name:'',
+        Email:'',
+        Phone:''
+    });
+
+    const handleInputChange = (event) =>{
+        const {name,value} = event.target;
+        setformData({
+            ...formData,
+            [name]:value
+        });
+    };
   return (
     <div className='container'>
         <div className='tab'>
@@ -45,14 +54,14 @@ function Personalnfo({tabChange}) {
         <h1>Personal Info</h1>
         <p>Please provide your name, email address and phone number</p>
         <form>
-            <label>Name</label>
-            <input type="text" placeholder='e.g. Vamsi Sollem'></input>
-            <label>Email address</label>
-            <input type="email" placeholder='e.g. vamsisollem@gmail.com '></input>
-            <label>Phone number</label>
-            <input type="number" placeholder='e.g. (123)-456-7890'></input>
-        </form>
-        <button className='next' onClick={handleNext}>Next Step</button>
+        <label>Name</label>
+        <input type="text" placeholder='e.g. Vamsi Sollem' name="Name" value={formData.Name} onChange={handleInputChange}></input>
+        <label>Email address</label>
+        <input type="email" placeholder='e.g. vamsisollem@gmail.com' name="Email" value={formData.Email} onChange={handleInputChange}></input>
+        <label>Phone number</label>
+        <input type="number" placeholder='e.g. (123)-456-7890' name="Phone" value={formData.Phone} onChange={handleInputChange}></input>
+      </form>
+        <button className='next' onClick={()=> handleNext()}>Next Step</button>
         </div>
     </div>
   )
