@@ -4,6 +4,33 @@ function Summary({ data, pdata, oData, tabChange}) {
     const handleBack = () => {
         tabChange(2);
       };
+    
+      const handleSubmit = async () =>{
+            try{
+                const response = await fetch('/api/submitFormData', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'appliation/json',
+                    },
+                    body: JSON.stringify({
+                        Name:data.Name,
+                        Email:data.Email,
+                        Phone: data.Phone,
+                        Plan: pdata,
+                        AddOns: oData,
+                    }),
+                });
+                if(response.ok){
+                    console.log('Form data submitted');
+                }
+                else{
+                    console.error('Failed to submit the data');
+                }
+            }
+            catch(error){
+                    console.error('Error submitting the data:', error);
+            }
+      }
   return (
     <div className='container'>
       <div className='tab'>
@@ -59,7 +86,7 @@ function Summary({ data, pdata, oData, tabChange}) {
         </div>
         <div>
           <button className='back' onClick={handleBack}>Go Back</button>
-          <button className='next'>Submit</button>
+          <button className='next' onClick= {()=>handleSubmit()}>Submit</button>
         </div>
       </div>
     </div>
