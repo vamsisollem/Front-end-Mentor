@@ -5,32 +5,31 @@ function Summary({ data, pdata, oData, tabChange}) {
         tabChange(2);
       };
     
-      const handleSubmit = async () =>{
-            try{
-                const response = await fetch('/api/submitFormData', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'appliation/json',
-                    },
-                    body: JSON.stringify({
-                        Name:data.Name,
-                        Email:data.Email,
-                        Phone: data.Phone,
-                        Plan: pdata,
-                        AddOns: oData,
-                    }),
-                });
-                if(response.ok){
-                    console.log('Form data submitted');
-                }
-                else{
-                    console.error('Failed to submit the data');
-                }
+      const handleSubmit = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/api/submitFormData', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', 
+                },
+                body: JSON.stringify({
+                    Name: data.Name,
+                    Email: data.Email,
+                    Phone: data.Phone,
+                    Plan: pdata,
+                    AddOns: oData,
+                }),
+            });
+            if (response.ok) {
+                console.log('Form data submitted');
+            } else {
+                console.error('Failed to submit the data');
             }
-            catch(error){
-                    console.error('Error submitting the data:', error);
-            }
-      }
+        } catch (error) {
+            console.error('Error submitting the data:', error);
+        }
+    };
+    
   return (
     <div className='container'>
       <div className='tab'>

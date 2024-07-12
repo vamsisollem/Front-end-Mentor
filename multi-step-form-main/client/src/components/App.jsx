@@ -22,7 +22,6 @@ function App() {
   const [addOnsData, setAddOnsData] = useState('');
   const handleOdata = (oData) =>{
     setAddOnsData(oData);
-    console.log(oData);
   }
   return (
     <div className="app">
