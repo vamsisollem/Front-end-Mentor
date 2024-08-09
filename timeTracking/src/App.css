@@ -1,0 +1,113 @@
+:root{
+  --Blue: hsl(246, 80%, 60%);
+  --Light-red-work: hsl(15, 100%, 70%);
+  --Soft-blue-play: hsl(195, 74%, 62%);
+  --Light-red-study: hsl(348, 100%, 68%);
+  --Lime-green-exercise: hsl(145, 58%, 55%);
+  --Violet-social: hsl(264, 64%, 52%);
+  --Soft-orange-selfcare: hsl(43, 84%, 65%);
+  --Very-dark-blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+body{
+  font-family: "Rubik", sans-serif;
+  background: var(--Very-dark-blue);
+  display: grid;
+  align-items: center;
+  height:100vh;
+  padding:0 50px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap:10px;
+  padding:10px;
+}
+
+.profile{
+  grid-row-start: 1;
+  grid-row-end: 4;
+  background-color: var(--Dark-blue);
+  padding: 0 !important;
+  border-radius: 10px;
+}
+
+.cards {
+  background-color: var(--Dark-blue);
+  color: var(--Pale-Blue);
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  height: 90%;
+}
+.cards h2{
+  padding: 10px;
+  margin-bottom: 0;
+}
+
+.profile ul{
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  gap:10px;
+}
+.profile ul li{
+  display: block;
+  color: var(--Pale-Blue);
+  font-size: 20px;
+}
+.profile img{
+  width:115px;
+  height:115px;
+}
+
+.profile-head{
+  background-color: var(--Blue);
+  border-radius:10px;
+  padding:15px;
+}
+.hours{
+  font-size: 30px;
+  margin-top: 0;
+  padding:10px;
+}
+.Work {
+  background-color: var(--Light-red-work);
+  position: relative;
+  border-radius: 10px;
+}
+.Study{
+  background-color: var(--Light-red-work);
+  position: relative;
+  border-radius: 10px;
+}
+.SelfCare{
+  background-color: var(--Soft-orange-selfcare);
+  border-radius: 10px;
+  position: relative;
+}
+.Play{
+  background-color: var(--Soft-blue-play);
+  position: relative;
+  border-radius: 10px;
+}
+.Exercise{
+  background-color: var(--Lime-green-exercise);
+  position: relative;
+  border-radius: 10px;
+}
+.Social{
+  background-color: var(--Violet-social);
+  position: relative;
+  border-radius: 10px;
+}
+.icons{
+  width:50px;
+  height:50px;
+  float: right;
+  z-index:1;
+}
