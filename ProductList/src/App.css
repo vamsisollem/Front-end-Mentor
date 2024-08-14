@@ -259,5 +259,5 @@ body{
 }
 .orderPrice{
   color: var(--Rose-900);
-  font-weight: bolder;
+  font-weight: bold;
 }
