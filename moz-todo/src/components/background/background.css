@@ -1,0 +1,21 @@
+body{
+    background-color: hsl(235, 21%, 11%);
+    margin:0;
+    padding:0;
+    height: 100vh;
+    font-family: "Josefin Sans", sans-serif;
+}
+.head{
+    background-image: url('../../assets/images/bg-desktop-dark.jpg');
+    height:250px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.head h1{
+    margin:0;
+    color: hsl(0, 0%, 98%);
+}

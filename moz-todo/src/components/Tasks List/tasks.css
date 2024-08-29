@@ -1,0 +1,74 @@
+ul li{
+    color:white;
+    list-style-type: none;
+}
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:30%;
+    height:30px;
+    border-radius:5px;
+    background:hsl(235, 24%, 19%);
+    border:1px solid hsl(236, 9%, 61%);
+    text-align: center;
+    line-height: 3rem;
+    padding: 10px;
+}
+h2{
+    color:hsl(0, 0%, 98%);
+    text-align: center;
+}
+.tasks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap:5px;
+}
+.checkbox{
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+    border:1px solid hsl(234, 39%, 85%);
+}
+.checkbox-clicked{
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+    border:1px solid hsl(234, 39%, 85%);
+    background-image: url('../../assets/images/icon-check.svg'), linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.tasksDetails{
+    display: flex;
+    width:100%;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+}
+.detailsContainer{
+    background:hsl(235, 24%, 19%);
+    border:1px solid hsl(236, 9%, 61%);
+    font-size: 12px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width:30%;
+}
+.tasksLeft{
+   align-self: flex-start;
+}
+.cancelButton:hover{
+    background-color: hsl(236, 9%, 61%);
+    width:30px;
+    height: 30px;
+    cursor: pointer;
+}
+.taskCategory:hover{
+    cursor: pointer;
+    font-size: larger;
+}
